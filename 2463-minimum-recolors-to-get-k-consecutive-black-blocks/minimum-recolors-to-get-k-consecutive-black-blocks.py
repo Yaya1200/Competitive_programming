@@ -4,9 +4,7 @@ class Solution:
         result = float('inf')
         for i in range(len(blocks)-k+1):
             value = blocks[i:i+k]
-            for char in value:
-                if char == 'W':
-                    count += 1
+            count = value.count('W')
             result = min(count, result)
             count = 0
         return result
