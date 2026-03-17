@@ -13,8 +13,6 @@ class Solution:
                 value1 += 1
             output[i-1] += value1
             result = max(result, output[i-1])
-       
-        
         return result
 
         
