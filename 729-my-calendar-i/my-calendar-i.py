@@ -1,15 +1,16 @@
 class MyCalendar:
 
     def __init__(self):
-        self.data = []
+        self.value = []
 
     def book(self, startTime: int, endTime: int) -> bool:
-        for s, e in self.data:
-            if not (endTime <= s or startTime >= e):
+        for f,l in self.value:
+            if not(startTime >= l or endTime<= f ):
                 return False
-
-        self.data.append((startTime, endTime))
+        self.value.append([startTime, endTime])
         return True
+
+        
 # Your MyCalendar object will be instantiated and called as such:
 # obj = MyCalendar()
 # param_1 = obj.book(startTime,endTime)
