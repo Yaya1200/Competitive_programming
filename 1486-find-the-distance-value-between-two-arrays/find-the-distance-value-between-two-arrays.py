@@ -7,14 +7,16 @@ class Solution:
             k = len(arr2)-1
             count = 0
             while(j <= k):
-                if abs(i - arr2[j]) > d and j != k: 
+                if abs(i - arr2[j]) <= d and j != k: 
                     count += 1
-                if abs(i - arr2[k]) > d:
+                    break
+                if abs(i - arr2[k]) <= d:
                     count += 1
+                    break
                 j+=1
                 k-=1
-            if count == len(arr2):
+            if count > 0:
                 value += 1
-        return value
+        return len(arr1) - value
 
         
