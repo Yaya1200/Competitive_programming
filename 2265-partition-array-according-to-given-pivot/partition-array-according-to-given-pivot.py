@@ -1,21 +1,21 @@
 class Solution:
     def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
-        less_than = []
-        equal_to = []
-        greather_than = []
-        result = []
+        output = []
+        hash_map = []
         for i in nums:
             if i < pivot:
-                less_than.append(i)
+                hash_map.append([i, -1])
             elif i > pivot:
-                greather_than.append(i)
+                hash_map.append([i, 1])
             else:
-                equal_to.append(i)
-        for i in less_than:
-            result.append(i)
-        for i in equal_to:
-            result.append(i)
-        for i in greather_than:
-            result.append(i)
-        return result
-        
+                hash_map.append([i, 0])
+        for i in hash_map:
+            if i[1] == -1:
+                output.append(i[0])
+        for i in hash_map:
+            if i[1] == 0:
+                output.append(i[0])
+        for i in hash_map:
+            if i[1] == 1:
+                output.append(i[0])
+        return output
