@@ -19,7 +19,6 @@ class Solution:
                     return dummy.next
             next_pointer = pointer1.next
             pointer1.next = None
-     
             prev = None
             while pointer2:
                 temp = pointer2.next
