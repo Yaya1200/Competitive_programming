@@ -4,18 +4,19 @@ class Solution:
         dummy2 = ListNode(0)
         curr1 = dummy1
         curr2 = dummy2
-        value1 = head
-
-        while value1: 
-            Next_Node = value1.next
-            if value1.val < x:
-                curr1.next = value1
-                curr1 = curr1.next   
+        while head:
+            if head.val < x:
+                temp = head.next
+                head.next = None
+                curr1.next = head
+                curr1 = curr1.next
+                head = temp
             else:
-                curr2.next = value1
-                curr2 = curr2.next 
-            value1.next = None  
-            value1 = Next_Node
-
+                temp = head.next
+                head.next = None
+                curr2.next = head
+                curr2 = curr2.next
+                head = temp
         curr1.next = dummy2.next
         return dummy1.next
+
