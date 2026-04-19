@@ -9,11 +9,8 @@ class MinStack:
     def top(self) -> int:
         return self.value[-1]       
     def getMin(self) -> int:
-        min_value = self.value[0]
-        for i in range(1, len(self.value)):
-            min_value = min(min_value, self.value[i])
-        return min_value
-
+        return min(self.value)
+       
 
 
         
