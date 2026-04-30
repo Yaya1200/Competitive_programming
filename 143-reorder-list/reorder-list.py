@@ -17,8 +17,6 @@ class Solution:
             temp = temp1
         left = 0
         right = len(stack)-1
-        head = ListNode(0)
-        curr = head
         while left < right:
             stack[left].next = stack[right]
             left += 1
