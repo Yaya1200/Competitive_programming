@@ -8,7 +8,6 @@ class Solution:
             else:
                 a = int(output[-2])
                 b = int(output[-1])
-
                 if i == "+":
                     output[-2] = str(a + b)
                 elif i == "-":
