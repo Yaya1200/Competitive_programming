@@ -5,6 +5,7 @@ class Solution:
         for i in tokens:
             if i not in values:
                 output.append(i)
+                
             else:
                 a = int(output[-2])
                 b = int(output[-1])
