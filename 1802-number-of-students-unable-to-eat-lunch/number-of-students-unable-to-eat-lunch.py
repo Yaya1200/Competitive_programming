@@ -10,6 +10,7 @@ class Solution:
                 j += 1
             else:
                 count += 1
+                
             i += 1
             if count == len(students)+1:
                 return len(students)
