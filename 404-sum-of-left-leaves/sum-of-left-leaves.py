@@ -10,10 +10,10 @@ class Solution:
             count = 0
             if not root:
                 return 0
-            if not root.left and not root.right and flag == 0:
+            if not root.left and not root.right and flag :
                 count += root.val
-            return count + sumLeaves(root.left, 0) + sumLeaves(root.right, 1)
-        return sumLeaves(root, 1)
+            return count + sumLeaves(root.left, 1) + sumLeaves(root.right, 0)
+        return sumLeaves(root, 0)
         
         
         
