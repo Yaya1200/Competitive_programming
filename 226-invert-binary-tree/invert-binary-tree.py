@@ -9,8 +9,6 @@ class Solution:
         def invert(root):
             if not root:
                 return 
-            if not root.left and not root.right:
-                return root
             left =  invert(root.left)
             right = invert(root.right)
             root.right = left
