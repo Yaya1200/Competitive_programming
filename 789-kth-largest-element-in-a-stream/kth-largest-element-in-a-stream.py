@@ -5,9 +5,13 @@ class KthLargest:
         self.k = k
         
     def add(self, val: int) -> int:
-        self.value.append(val)
-        self.value = sorted(self.value)
-        return self.value[-self.k]
+        heapq.heappush(self.value, val)
+        heapq.heapify(self.value)
+        while len(self.value) > self.k:
+            heapq.heappop(self.value)
+        return self.value[0]
+    
+    
         
 
         
