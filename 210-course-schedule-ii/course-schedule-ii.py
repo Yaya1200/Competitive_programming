@@ -24,10 +24,7 @@ class Solution:
                 indegree[neb] -= 1
                 if indegree[neb] == 0:
                     queue.append(neb)
-        if processed == numCourses:
-           return output
-        else:
-            return []
+        return output if processed == numCourses else []
 
 
 
