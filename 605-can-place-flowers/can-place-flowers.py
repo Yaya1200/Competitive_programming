@@ -4,8 +4,6 @@ class Solution:
             return True
         if len(flowerbed) == 1 and flowerbed[0] == 0 and n == 1:
             return True
-        if len(flowerbed) == 1 and flowerbed[0] == 1:
-            return False
         for i in range(len(flowerbed)):
             if i == 0 and flowerbed[0] == 0 and flowerbed[1] == 0:
                 n -= 1
