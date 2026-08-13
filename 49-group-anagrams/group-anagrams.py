@@ -3,10 +3,10 @@ class Solution:
         hash_map = {}
         output = []
         for i in strs:
-            if str(sorted(i)) in hash_map:
-                hash_map[str(sorted(i))].append(i)
-            else:
-                hash_map[str(sorted(i))] = [i]
+            if str(sorted(i)) not in hash_map:
+                hash_map[str(sorted(i))] = []
+            hash_map[str(sorted(i))].append(i)
+                  
         for i in hash_map:
             output.append(hash_map[i])
         return output        
