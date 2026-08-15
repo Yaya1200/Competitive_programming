@@ -1,12 +1,16 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
-        count = 0
-        output = 0
-        for i in range(n):
-            output+= (i+1)
-            if output <= n:
-              count +=1
+        left, right = 0, n
+        
+        while left <= right:
+            mid = (left + right) // 2
+            coins = mid * (mid + 1) // 2
+            
+            if coins == n:
+                return mid
+            elif coins < n:
+                left = mid + 1
             else:
-                break
-        print(output)
-        return count
+                right = mid - 1
+                
+        return right
