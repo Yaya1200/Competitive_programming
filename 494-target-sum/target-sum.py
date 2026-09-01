@@ -1,19 +1,29 @@
 class Solution:
+
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        count = 0
 
-        dp = [[] for _ in range(len(nums))]
+        dp = {0: 1}
 
-        dp[0].append(nums[0])
-        dp[0].append(-nums[0])
+        for i in nums:
 
-        for i in range(1, len(nums)):
-            for value in dp[i - 1]:
-                dp[i].append(value - nums[i])
-                dp[i].append(value + nums[i])
+            newdp = {}
 
-        for value in dp[-1]:
-            if value == target:
-                count += 1
+            for total, value in dp.items():
 
-        return count
+                newvalue = i + total
+
+                if newvalue in newdp:
+                    newdp[newvalue] += value
+                else:
+                    newdp[newvalue] = value
+
+                newvalue = total - i
+
+                if newvalue in newdp:
+                    newdp[newvalue] += value
+                else:
+                    newdp[newvalue] = value
+
+            dp = newdp
+
+        return dp.get(target, 0)
