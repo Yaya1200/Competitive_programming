@@ -20,9 +20,7 @@ class RandomizedSet:
         
 
     def getRandom(self) -> int:
-        num = len(self.value)
-        value1 = random.randint(0, num-1)
-        return list(self.value)[value1]
+          return random.choice(list(self.value))
         
 
 
