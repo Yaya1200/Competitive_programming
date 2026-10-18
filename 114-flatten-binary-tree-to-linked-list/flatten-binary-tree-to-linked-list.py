@@ -1,10 +1,3 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-# Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
@@ -19,24 +12,17 @@ class Solution:
         if not root:
             return
 
-        dummy = TreeNode()
-        curr = dummy
+        left = root.left
+        right = root.right
 
-        def dfs(root):
-            nonlocal curr
-            if not root:
-                return
+        root.left = None
+        root.right = left
 
-            left = root.left
-            right = root.right
-
-            curr.right = root
-            curr.left = None
+        curr = root
+        while curr.right:
             curr = curr.right
 
-            dfs(left)
-            dfs(right)
-
-        dfs(root)
-        return dummy
+        curr.right = right
+        self.flatten(left)
+        self.flatten(right)
         
