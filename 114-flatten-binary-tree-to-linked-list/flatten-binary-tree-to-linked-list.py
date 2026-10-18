@@ -38,4 +38,5 @@ class Solution:
             dfs(right)
 
         dfs(root)
-        dummy.right.left = None
+        return dummy
+        
