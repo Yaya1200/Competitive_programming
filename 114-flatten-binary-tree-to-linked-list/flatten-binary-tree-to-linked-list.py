@@ -1,9 +1,3 @@
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
 class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
@@ -15,6 +9,9 @@ class Solution:
         left = root.left
         right = root.right
 
+        self.flatten(left)
+        self.flatten(right)
+
         root.left = None
         root.right = left
 
@@ -23,6 +20,3 @@ class Solution:
             curr = curr.right
 
         curr.right = right
-        self.flatten(left)
-        self.flatten(right)
-        
