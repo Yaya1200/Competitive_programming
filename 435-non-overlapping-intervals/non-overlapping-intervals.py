@@ -9,11 +9,12 @@ class Solution:
             value2 = min(b, d)
             if value1 < value2:
                 count += 1
-                a = c
+                a = min(a,c)
                 b = min(b, d)
             else:
                 a = c
                 b = d
+          
         return count
 
 
