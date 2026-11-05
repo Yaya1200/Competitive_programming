@@ -14,7 +14,7 @@ class Solution:
                 hash_map[fruits[j]] -= 1
 
                 if hash_map[fruits[j]] == 0:
-                    del hash_map[fruits[j]]
+                    hash_map.pop(fruits[j])
 
                 j += 1
 
