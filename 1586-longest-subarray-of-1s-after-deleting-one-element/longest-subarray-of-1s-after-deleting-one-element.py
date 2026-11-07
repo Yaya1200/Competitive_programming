@@ -11,10 +11,8 @@ class Solution:
                     if nums[j] == 0:
                         zeros -= 1
                     j += 1
-            if zeros:
-              result = max(result, i - j + 1-zeros)
-            else:
-                result = max(result, i - j )
+           
+            result = max(result, i - j )
         return result
 
         
